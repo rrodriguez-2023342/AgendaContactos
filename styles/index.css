@@ -9,7 +9,7 @@
 
 body {
     min-height: 100vh;
-    background-color: #080710;
+    background: linear-gradient(135deg, #0f0f23 0%, #1a1a2e 100%);
     display: flex;
     justify-content: center;
     align-items: center;
