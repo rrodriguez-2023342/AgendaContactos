@@ -1,0 +1,191 @@
+body {
+    margin: 0;
+    min-height: 100vh;
+    background: linear-gradient(135deg, #0f0f23 0%, #1a1a2e 100%);
+    font-family: Arial, Helvetica, sans-serif;
+    color: #fff;
+}
+
+.header {
+    height: 70px;
+    padding: 0 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: linear-gradient(135deg, #0f0f23 0%, #1a1a2e 100%);
+    box-shadow: 0 4px 20px rgba(0,0,0,0.4);
+}
+
+.header h2 {
+    margin: 0;
+    font-weight: 600;
+}
+
+.header-botones {
+    display: flex;
+    gap: 15px;
+}
+
+.header button {
+    padding: 10px 22px;
+    border-radius: 25px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    border: none;
+}
+
+.btn-secundario {
+    background: rgba(255,255,255,0.15);
+    color: #fff;
+}
+
+.btn-secundario:hover {
+    background: rgba(255,255,255,0.3);
+}
+
+.btn-principal {
+    background: linear-gradient(135deg, #a855f7, #7c3aed);
+    color: #fff;
+}
+
+.btn-principal:hover {
+    filter: brightness(1.2);
+}
+
+.contenedor {
+    position: relative;
+    min-height: calc(100vh - 70px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.fondo {
+    position: absolute;
+    width: 430px;
+    height: 600px;
+}
+
+.fondo .circulo {
+    position: absolute;
+    width: 220px;
+    height: 220px;
+    border-radius: 50%;
+    filter: blur(5px);
+}
+
+.circulo:first-child {
+    background: linear-gradient(#9b22ea, #bf23f6);
+    top: 40px;
+    left: -80px;
+}
+
+.circulo:last-child {
+    background: linear-gradient(to right, #ff512f, #f09819);
+    bottom: -40px;
+    right: -80px;
+}
+
+form {
+    position: relative;
+    width: 100%;
+    max-width: 430px;
+    padding: 40px 30px;
+    background: rgba(255,255,255,0.08);
+    border-radius: 14px;
+    backdrop-filter: blur(12px);
+    box-shadow: 0 0 40px rgba(0,0,0,0.6);
+    z-index: 2;
+}
+
+form h3 {
+    margin: 0;
+    font-size: 28px;
+    font-weight: 500;
+}
+
+form h3 span {
+    display: block;
+    font-size: 15px;
+    color: #e5e5e5;
+    margin-top: 4px;
+}
+
+label {
+    display: block;
+    margin-top: 20px;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+input,
+textarea {
+    width: 100%;
+    margin-top: 8px;
+    padding: 12px;
+    font-size: 14px;
+    border-radius: 6px;
+    background: rgba(255,255,255,0.1);
+    border: none;
+    color: #fff;
+    box-sizing: border-box;
+}
+
+textarea {
+    resize: none;
+    height: 90px;
+}
+
+input::placeholder,
+textarea::placeholder {
+    color: #ddd;
+}
+
+form button {
+    margin-top: 35px;
+    width: 100%;
+    padding: 14px;
+    font-size: 16px;
+    font-weight: 600;
+    border-radius: 50px;
+    border: none;
+    cursor: pointer;
+    background: #fff;
+    color: #000;
+    transition: 0.3s;
+}
+
+form button:hover {
+    background: #000;
+    color: #fff;
+}
+@media (max-width: 480px) {
+    .header {
+        padding: 0 20px;
+    }
+
+    .header h2 {
+        font-size: 18px;
+    }
+
+    .header-botones button {
+        padding: 8px 16px;
+        font-size: 13px;
+    }
+
+    form {
+        padding: 30px 20px;
+    }
+
+    .fondo {
+        width: 320px;
+        height: 500px;
+    }
+
+    .fondo .circulo {
+        width: 160px;
+        height: 160px;
+    }
+}

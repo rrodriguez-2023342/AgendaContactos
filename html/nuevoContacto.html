@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../styles/nuevoContacto.css">
+    <link rel="icon" href="../images/contactos.png">
+    <script src="../javascript/cambioPagina.js"></script>
+    <title>Nuevo Contacto</title>
+</head>
+
+<body>
+    <header class="header">
+        <h2>Nuevo Contacto</h2>
+
+        <div class="header-botones">
+            <button class="btn-secundario">Favoritos</button>
+            <button class="btn-principal" onclick="contactos()">Contactos</button>
+        </div>
+    </header>
+
+    <main class="contenedor">
+
+        <div class="fondo">
+            <div class="circulo"></div>
+            <div class="circulo"></div>
+        </div>
+
+        <form>
+            <h3>
+                Nuevo Contacto
+                <span>Agrega la información del contacto</span>
+            </h3>
+
+            <label>Nombre</label>
+            <input type="text" placeholder="Nombre completo">
+
+            <label>Teléfono</label>
+            <input type="tel" placeholder="Ej. 5555-5555">
+
+            <label>Correo electrónico</label>
+            <input type="email" placeholder="ejemplo@gmail.com">
+
+            <label>Notas</label>
+            <textarea placeholder="Información adicional del contacto"></textarea>
+
+            <button type="submit">Guardar Contacto</button>
+        </form>
+
+    </main>
+
+</body>
+
+</html>
