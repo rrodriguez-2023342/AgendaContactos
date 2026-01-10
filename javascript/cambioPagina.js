@@ -7,3 +7,8 @@ function nuevoContacto() {
 function contactos() {
     window.location.href = "../html/contactos.html"
 }
+
+//Metodo para cambiar a la pagina de Favoritos
+function favoritos() {
+    window.location.href = "../html/favoritos.html"
+}
