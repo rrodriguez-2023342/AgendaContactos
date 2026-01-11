@@ -42,3 +42,13 @@ function favoritos1() {
 function favoritos2() {
     window.location.href = "../html/favoritos2.html"
 }
+
+//Metodo para ir a la vista del Perfil del Usuario
+function perfil() {
+    window.location.href = "../html/perfil.html"
+}
+
+//Metodo para ir a la vista del Login
+function login() {
+    window.location.href = "../index.html"
+}

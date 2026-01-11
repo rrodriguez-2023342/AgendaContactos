@@ -1,14 +1,15 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../styles/detallesContacto.css">
     <link rel="stylesheet" href="../styles/contactos.css">
+    <link rel="stylesheet" href="../styles/detallesContacto.css">
     <link rel="icon" href="../images/contactos.png">
     <script src="../javascript/cambioPagina.js"></script>
-    <title>Perfil de Contacto</title>
+    <script src="../javascript/inicioSesion.js"></script>
+    <title>Mi Perfil</title>
 </head>
 
 <body>
@@ -19,46 +20,46 @@
     <div class="contenedor">
 
         <nav class="navbar">
-            <div class="navbar-contactos">Información</div>
+            <div class="navbar-contactos">Mi Perfil</div>
             <div class="navbar-botones">
                 <button class="nav-btn" onclick="contactos()">Contactos</button>
-                <button class="nav-btn perfil" onclick="perfil()">Mi Perfil</button>
+                <button class="nav-btn perfil">toDo List</button>
             </div>
         </nav>
 
         <div class="encabezado">
-            <h1>Perfil del Contacto</h1>
-            <p>Información detallada</p>
+            <h1>Perfil de Usuario</h1>
+            <p>Información de tu cuenta</p>
         </div>
 
         <div class="perfil-card">
 
             <div class="perfil-avatar">
-                NG
+                <img src="../images/contactos.png" alt="avatar">
             </div>
 
             <div class="perfil-info">
-                <h2>Nuria González</h2>
+                <h2 id="perfil-nombre"></h2>
 
                 <div class="perfil-dato">
-                    <span>Teléfono:</span>
-                    <p>+502 5606-3626</p>
+                    <span>Usuario</span>
+                    <p id="perfil-usuario"></p>
                 </div>
 
                 <div class="perfil-dato">
-                    <span>Correo:</span>
-                    <p>nuriales@email.com</p>
+                    <span>Contraseña</span>
+                    <p id="perfil-contraseña"></p>
                 </div>
 
                 <div class="perfil-dato">
-                    <span>Información:</span>
-                    <p>...</p>
+                    <span>Rol</span>
+                    <p id="perfil-rol"></p>
                 </div>
             </div>
 
             <div class="perfil-botones">
-                <button class="btn eliminar">Eliminar</button>
-                <button class="btn editar">Editar</button>
+                <button class="btn editar">Editar Perfil</button>
+                <button class="btn eliminar" onclick="login()">Cerrar Sesión</button>
             </div>
 
         </div>
