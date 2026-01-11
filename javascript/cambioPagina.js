@@ -52,3 +52,8 @@ function perfil() {
 function login() {
     window.location.href = "../index.html"
 }
+
+//Metodo para ir a la vista del toDo List
+function toDoList() {
+    window.location.href = "../html/toDoList.html"
+}
