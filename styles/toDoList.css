@@ -1,0 +1,124 @@
+.todo-lista {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 18px;
+}
+
+.todo {
+    background: rgba(42, 42, 60, 0.6);
+    backdrop-filter: blur(10px);
+    border-radius: 16px;
+    padding: 22px;
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    transition: 0.3s ease;
+    cursor: pointer;
+    border-left: 6px solid transparent;
+}
+
+.todo:hover {
+    background: rgba(52, 52, 70, 0.8);
+    transform: translateY(-3px);
+}
+
+.todo-check {
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    border: 2px solid #a855f7;
+    flex-shrink: 0;
+    cursor: pointer;
+}
+
+.todo-info {
+    flex: 1;
+}
+
+.todo-titulo {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: white;
+    margin-bottom: 4px;
+}
+
+.todo-descripcion {
+    font-size: 0.95rem;
+    color: rgba(255, 255, 255, 0.65);
+}
+
+.todo-acciones {
+    display: flex;
+    gap: 10px;
+}
+
+.todo-btn {
+    padding: 8px 16px;
+    border-radius: 50px;
+    font-size: 0.85rem;
+    border: none;
+    cursor: pointer;
+    transition: 0.3s ease;
+    color: white;
+}
+
+.todo-btn.editar {
+    background: linear-gradient(135deg, #38bdf8, #0ea5e9);
+}
+
+.todo-btn.eliminar {
+    background: linear-gradient(135deg, #f87171, #ef4444);
+}
+
+.todo-btn:hover {
+    transform: translateY(-2px);
+}
+
+/* Prioridades */
+
+/* Pendiente */
+.todo.pendiente {
+    border-left-color: #facc15;
+}
+
+.todo.pendiente .todo-check {
+    border-color: #facc15;
+}
+
+/* Urgente */
+.todo.urgente {
+    border-left-color: #ef4444;
+}
+
+.todo.urgente .todo-check {
+    border-color: #ef4444;
+}
+
+/* Finalizada */
+.todo.finalizada,
+.todo.completado {
+    border-left-color: #22c55e;
+    opacity: 0.7;
+}
+
+.todo.finalizada .todo-check,
+.todo.completado .todo-check {
+    border-color: #22c55e;
+    background: #22c55e;
+}
+
+.todo.finalizada .todo-titulo,
+.todo.completado .todo-titulo {
+    text-decoration: line-through;
+}
+
+@media (max-width: 480px) {
+    .todo {
+        flex-wrap: wrap;
+    }
+
+    .todo-acciones {
+        width: 100%;
+        justify-content: flex-end;
+    }
+}

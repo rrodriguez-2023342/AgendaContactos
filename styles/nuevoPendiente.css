@@ -1,0 +1,131 @@
+/* Card del formulario */
+.form-card {
+    max-width: 600px;
+    margin: 0 auto;
+    background: rgba(42, 42, 60, 0.6);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    padding: 30px;
+}
+
+/* Grupos */
+.form-grupo {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+}
+
+.form-grupo label {
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 0.95rem;
+    margin-bottom: 8px;
+}
+
+/* Inputs */
+.form-grupo input,
+.form-grupo textarea {
+    background: rgba(20, 20, 35, 0.7);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    padding: 12px 16px;
+    color: white;
+    font-size: 1rem;
+    outline: none;
+    transition: 0.3s ease;
+}
+
+.form-grupo input::placeholder,
+.form-grupo textarea::placeholder {
+    color: rgba(255, 255, 255, 0.4);
+}
+
+.form-grupo input:focus,
+.form-grupo textarea:focus {
+    border-color: #a855f7;
+    box-shadow: 0 0 0 2px rgba(168, 85, 247, 0.2);
+}
+
+.prioridad-opciones {
+    display: flex;
+    gap: 14px;
+}
+
+.prioridad {
+    flex: 1;
+    text-align: center;
+    padding: 14px;
+    border-radius: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.3s ease;
+    border: 2px solid transparent;
+}
+
+.prioridad.pendiente {
+    background: rgba(250, 204, 21, 0.15);
+    color: #facc15;
+    border-color: #facc15;
+}
+
+.prioridad.pendiente:hover {
+    background: rgba(250, 204, 21, 0.25);
+}
+
+.prioridad.urgente {
+    background: rgba(239, 68, 68, 0.15);
+    color: #ef4444;
+    border-color: #ef4444;
+}
+
+.prioridad.urgente:hover {
+    background: rgba(239, 68, 68, 0.25);
+}
+
+.form-botones {
+    display: flex;
+    justify-content: flex-end;
+    gap: 14px;
+    margin-top: 10px;
+}
+
+.form-btn {
+    padding: 12px 26px;
+    border-radius: 50px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    border: none;
+    cursor: pointer;
+    transition: 0.3s ease;
+    color: white;
+}
+
+.form-btn.cancelar {
+    background: rgba(255, 255, 255, 0.15);
+}
+
+.form-btn.guardar {
+    background: linear-gradient(135deg, #a855f7, #7c3aed);
+}
+
+.form-btn:hover {
+    transform: translateY(-2px);
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+    .form-card {
+        padding: 20px;
+    }
+
+    .prioridad-opciones {
+        flex-direction: column;
+    }
+
+    .form-botones {
+        flex-direction: column;
+    }
+
+    .form-btn {
+        width: 100%;
+    }
+}

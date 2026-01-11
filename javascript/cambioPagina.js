@@ -57,3 +57,13 @@ function login() {
 function toDoList() {
     window.location.href = "../html/toDoList.html"
 }
+
+//Metodo para ir a la vista de Agregar Pendiente
+function irNuevoPendiente() {
+    window.location.href = "../html/nuevoPendiente.html"
+}
+
+//Metodo para ir a la vista de Agregar Pendiente
+function irEditarPendiente() {
+    window.location.href = "../html/editarPendiente.html"
+}

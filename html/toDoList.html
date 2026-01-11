@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../styles/contactos.css">
+    <link rel="stylesheet" href="../styles/toDoList.css">
+    <script src="../javascript/cambioPagina.js"></script>
+    <link rel="icon" href="../images/lista.png">
+    <title>ToDo List</title>
+</head>
+
+<body>
+
+    <div class="circulo-bg circulo-1"></div>
+    <div class="circulo-bg circulo-2"></div>
+
+    <div class="contenedor">
+
+        <nav class="navbar">
+            <div class="navbar-contactos">ToDo List</div>
+            <div class="navbar-botones">
+                <button class="nav-btn" onclick="contactos()">Contactos</button>
+                <button class="nav-btn perfil" onclick="perfil()">Mi Perfil</button>
+            </div>
+        </nav>
+
+        <div class="encabezado">
+            <h1>Mis Pendientes</h1>
+            <p>Organiza y gestiona tus tareas</p>
+        </div>
+
+        <button class="nuevo-contacto-btn" onclick="irNuevoPendiente()">
+            Agregar Pendiente
+        </button>
+
+        <div class="todo-lista">
+
+            <div class="todo urgente">
+                <div class="todo-check"></div>
+
+                <div class="todo-info">
+                    <div class="todo-titulo">Entregar proyecto de programación</div>
+                    <div class="todo-descripcion">
+                        Terminar la interfaz y dejar listo el diseño final.
+                    </div>
+                </div>
+
+                <div class="todo-acciones">
+                    <button class="todo-btn editar" onclick="irEditarPendiente()">Editar</button>
+                    <button class="todo-btn eliminar">Eliminar</button>
+                </div>
+            </div>
+
+            <div class="todo pendiente">
+                <div class="todo-check"></div>
+
+                <div class="todo-info">
+                    <div class="todo-titulo">Entregar proyecto de Seminario</div>
+                    <div class="todo-descripcion">
+                        Terminar mi Proyecto de Vida
+                    </div>
+                </div>
+
+                <div class="todo-acciones">
+                    <button class="todo-btn editar" onclick="irEditarPendiente()">Editar</button>
+                    <button class="todo-btn eliminar">Eliminar</button>
+                </div>
+            </div>
+
+            <div class="todo completado">
+                <div class="todo-check"></div>
+
+                <div class="todo-info">
+                    <div class="todo-titulo">Comprar cuaderno</div>
+                    <div class="todo-descripcion">
+                        Para apuntes de Ingeniería en Sistemas.
+                    </div>
+                </div>
+
+                <div class="todo-acciones">
+                    <button class="todo-btn editar" onclick="irEditarPendiente()">Editar</button>
+                    <button class="todo-btn eliminar">Eliminar</button>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+</body>
+
+</html>

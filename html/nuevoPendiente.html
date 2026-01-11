@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../styles/contactos.css">
+    <link rel="stylesheet" href="../styles/nuevoPendiente.css">
+    <link rel="icon" href="../images/contactos.png">
+    <script src="../javascript/cambioPagina.js"></script>
+    <title>Nuevo Pendiente</title>
+</head>
+
+<body>
+
+    <div class="circulo-bg circulo-1"></div>
+    <div class="circulo-bg circulo-2"></div>
+
+    <div class="contenedor">
+
+        <nav class="navbar">
+            <div class="navbar-contactos">ToDo List</div>
+            <div class="navbar-botones">
+                <button class="nav-btn" onclick="contactos()">Contactos</button>
+                <button class="nav-btn" onclick="toDoList()">ToDo List</button>
+                <button class="nav-btn perfil" onclick="perfil()">Mi Perfil</button>
+            </div>
+        </nav>
+
+        <div class="encabezado">
+            <h1>Nuevo Pendiente</h1>
+            <p>Agrega una nueva tarea a tu lista</p>
+        </div>
+
+        <form class="form-card">
+
+            <div class="form-grupo">
+                <label>Título del pendiente</label>
+                <input type="text" placeholder="Ej. Entregar proyecto final">
+            </div>
+
+            <div class="form-grupo">
+                <label>Descripción</label>
+                <textarea rows="4" placeholder="Describe el pendiente..."></textarea>
+            </div>
+
+            <div class="form-grupo">
+                <label>Prioridad</label>
+
+                <div class="prioridad-opciones">
+                    <div class="prioridad pendiente">
+                        Pendiente
+                    </div>
+
+                    <div class="prioridad urgente">
+                        Urgente
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-botones">
+                <button class="form-btn cancelar">Cancelar</button>
+                <button class="form-btn guardar">Guardar Pendiente</button>
+            </div>
+
+        </form>
+
+    </div>
+
+</body>
+
+</html>
