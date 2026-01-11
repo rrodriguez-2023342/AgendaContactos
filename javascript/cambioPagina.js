@@ -12,3 +12,33 @@ function contactos() {
 function favoritos() {
     window.location.href = "../html/favoritos.html"
 }
+
+//Metodos para ir a las paginas de los contactos
+function contacto1() {
+    window.location.href = "../html/contacto1.html"
+}
+
+function contacto2() {
+    window.location.href = "../html/contacto2.html"
+}
+
+function contacto3() {
+    window.location.href = "../html/contacto3.html"
+}
+
+function contacto4() {
+    window.location.href = "../html/contacto4.html"
+}
+
+function contacto5() {
+    window.location.href = "../html/contacto5.html"
+}
+
+//Metodos para ir a las paginas de los favoritos
+function favoritos1() {
+    window.location.href = "../html/favoritos1.html"
+}
+
+function favoritos2() {
+    window.location.href = "../html/favoritos2.html"
+}

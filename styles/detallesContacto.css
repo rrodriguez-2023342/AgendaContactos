@@ -1,0 +1,99 @@
+/* Perfil de contacto */
+.perfil-card {
+    background: rgba(42, 42, 60, 0.6);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    padding: 35px;
+    max-width: 600px;
+    margin: 0 auto;
+    color: white;
+    text-align: center;
+}
+
+/* Avatar grande */
+.perfil-avatar {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    background: white;
+    color: #3b3b55;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin: 0 auto 20px;
+}
+
+/* Info */
+.perfil-info h2 {
+    font-size: 1.8rem;
+    margin-bottom: 25px;
+}
+
+.perfil-dato {
+    margin-bottom: 18px;
+    text-align: left;
+}
+
+.perfil-dato span {
+    font-weight: 600;
+    display: block;
+    margin-bottom: 4px;
+}
+
+.perfil-dato p {
+    color: rgba(255, 255, 255, 0.75);
+    line-height: 1.5;
+}
+
+/* Botones */
+.perfil-botones {
+    display: flex;
+    gap: 15px;
+    margin-top: 30px;
+    justify-content: center;
+}
+
+.btn {
+    padding: 12px 26px;
+    border-radius: 50px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    border: none;
+    cursor: default;
+    transition: 0.3s ease;
+}
+
+/* Eliminar */
+.btn.eliminar {
+    background: linear-gradient(135deg, #fb7185, #f43f5e);
+    color: white;
+    cursor: pointer;
+}
+
+/* Editar */
+.btn.editar {
+    background: linear-gradient(135deg, #a855f7, #7c3aed);
+    color: white;
+    cursor: pointer;
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+    .perfil-card {
+        padding: 25px 18px;
+    }
+
+    .perfil-info h2 {
+        font-size: 1.4rem;
+    }
+
+    .perfil-botones {
+        flex-direction: column;
+    }
+
+    .btn {
+        width: 100%;
+    }
+}
