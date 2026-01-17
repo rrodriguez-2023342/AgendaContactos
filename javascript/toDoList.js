@@ -1,5 +1,7 @@
 // Array principal donde se guardan todos los pendientes
 let pendientes = [];
+// Guarda el filtro actualmente seleccionado
+let filtroActual = 'todas';
 
 // Carga los pendientes guardados en localStorage cuando inicia la app
 function cargarPendientes() {
@@ -14,6 +16,20 @@ function cargarPendientes() {
 // Guarda el array de pendientes en localStorage
 function guardarPendientes() {
     localStorage.setItem('pendientes', JSON.stringify(pendientes));
+}
+
+// Inicializa el selector de filtros
+function inicializarFiltro() {
+    const filtroSelect = document.querySelector('.filtro-select');
+
+    // Si no existe el select, salir
+    if (!filtroSelect) return;
+
+    // Detecta cuando el usuario cambia el filtro
+    filtroSelect.addEventListener('change', (e) => {
+        filtroActual = e.target.value;
+        renderizarPendientes();
+    });
 }
 
 //Renderizar la lista
@@ -39,8 +55,33 @@ function renderizarPendientes() {
         return;
     }
 
-    // Recorrer todos los pendientes y crear el HTML
-    pendientes.forEach((pendiente, index) => {
+    // Crear una copia del array agregando el índice original
+    let pendientesFiltrados = pendientes.map((p, index) => ({
+        ...p,
+        index
+    }));
+
+    // Aplicar filtros segun la seleccion
+    if (filtroActual === 'pendientes') {
+        pendientesFiltrados = pendientesFiltrados.filter(p => p.prioridad === 'pendiente');
+    } else if (filtroActual === 'urgentes') {
+        pendientesFiltrados = pendientesFiltrados.filter(p => p.prioridad === 'urgente');
+    } else if (filtroActual === 'finalizadas') {
+        pendientesFiltrados = pendientesFiltrados.filter(p => p.prioridad === 'completado');
+    }
+
+    // Si no hay resultados despues del filtro
+    if (pendientesFiltrados.length === 0) {
+        todoLista.innerHTML = `
+            <div style="text-align:center;padding:40px;color:rgba(255,255,255,0.5);">
+                <p style="font-size:1.2rem;">No hay tareas para este filtro</p>
+            </div>
+        `;
+        return;
+    }
+
+    // Recorrer los pendientes filtrados y crear su HTML
+    pendientesFiltrados.forEach((pendiente) => {
         const todoDiv = document.createElement('div');
 
         // Asignar clase segun la prioridad
@@ -48,7 +89,7 @@ function renderizarPendientes() {
         
         // Contenido del pendiente
         todoDiv.innerHTML = `
-            <div class="todo-check" onclick="toggleCompletado(${index})"></div>
+            <div class="todo-check" onclick="toggleCompletado(${pendiente.index})"></div>
             
             <div class="todo-info">
                 <div class="todo-titulo">${pendiente.titulo}</div>
@@ -56,8 +97,8 @@ function renderizarPendientes() {
             </div>
             
             <div class="todo-acciones">
-                <button class="todo-btn editar" onclick="irEditarPendiente(${index})">Editar</button>
-                <button class="todo-btn eliminar" onclick="eliminarPendiente(${index})">Eliminar</button>
+                <button class="todo-btn editar" onclick="irEditarPendiente(${pendiente.index})">Editar</button>
+                <button class="todo-btn eliminar" onclick="eliminarPendiente(${pendiente.index})">Eliminar</button>
             </div>
         `;
         
@@ -93,15 +134,15 @@ function eliminarPendiente(index) {
     }
 }
 
-//Inicializar la pagina de la lista
-if (window.location.pathname.includes('toDoList.html')) {
-    document.addEventListener('DOMContentLoaded', () => {
-        cargarPendientes();
-        renderizarPendientes();
-    });
-}
+// Inicializar la pagina de la pagina
+document.addEventListener('DOMContentLoaded', () => {
+    cargarPendientes();
+    inicializarFiltro();
+    renderizarPendientes();
+});
 
-//Variables del formulario
+
+// Variables del formulario
 let prioridadSeleccionada = 'pendiente'; // Prioridad por defecto
 let pendienteEditando = null;            // Indice del pendiente a editar
 
@@ -166,26 +207,26 @@ function inicializarFormulario() {
         });
     });
 
-    //Boton de cancelar
+    // Boton de cancelar
     btnCancelar.addEventListener('click', (e) => {
         e.preventDefault();
         toDoList();
     });
 
-    //Boton de guardar
+    // Boton de guardar
     btnGuardar.addEventListener('click', (e) => {
         e.preventDefault();
         guardarNuevoPendiente();
     });
 
-    //Enviar del formulario
+    // Enviar del formulario
     formulario.addEventListener('submit', (e) => {
         e.preventDefault();
         guardarNuevoPendiente();
     });
 }
 
-//Cargar pendiente a editar
+// Cargar pendiente a editar
 function cargarPendienteParaEditar(index) {
     const pendiente = pendientes[index];
 
@@ -235,7 +276,7 @@ function guardarNuevoPendiente() {
     toDoList();
 }
 
-//Ir editarPendiente
+// Ir editarPendiente
 function irEditarPendiente(index) {
     if (window.location.pathname.includes('/html/')) {
         window.location.href = `editarPendiente.html?index=${index}`;
