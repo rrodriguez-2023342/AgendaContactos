@@ -70,6 +70,18 @@ function renderizarPendientes() {
         pendientesFiltrados = pendientesFiltrados.filter(p => p.prioridad === 'completado');
     }
 
+    // Definir el orden de los estados
+    const ordenPrioridad = {
+        urgente: 1,
+        pendiente: 2,
+        completado: 3
+    };
+
+    // Ordenar los pendientes por prioridad
+    pendientesFiltrados.sort((a, b) => {
+        return ordenPrioridad[a.prioridad] - ordenPrioridad[b.prioridad];
+    });
+
     // Si no hay resultados despues del filtro
     if (pendientesFiltrados.length === 0) {
         todoLista.innerHTML = `
