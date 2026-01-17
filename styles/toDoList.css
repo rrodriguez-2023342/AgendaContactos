@@ -1,3 +1,39 @@
+
+.controles-todo {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+    margin-bottom: 30px;
+    flex-wrap: wrap;
+}
+
+/* Filtro select */
+.filtro-select {
+    background: rgba(42, 42, 60, 0.6);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: white;
+    padding: 14px 20px;
+    border-radius: 50px;
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: 0.3s ease;
+    outline: none;
+}
+
+.filtro-select:hover {
+    background: rgba(52, 52, 70, 0.8);
+    transform: translateY(-2px);
+}
+
+.filtro-select option {
+    background: #1a1a2e;
+    color: white;
+    padding: 10px;
+}
+
+/* Lista de tareas */
 .todo-lista {
     display: grid;
     grid-template-columns: 1fr;
@@ -112,7 +148,18 @@
     text-decoration: line-through;
 }
 
+/* Responsive */
 @media (max-width: 480px) {
+    .controles-todo {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .nuevo-contacto-btn,
+    .filtro-select {
+        width: 100%;
+    }
+
     .todo {
         flex-wrap: wrap;
     }
