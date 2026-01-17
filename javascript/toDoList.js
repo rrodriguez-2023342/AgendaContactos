@@ -245,6 +245,18 @@ function cargarPendienteParaEditar(index) {
     // Detectar prioridad correcta
     const prioridad = pendiente.prioridadAnterior || pendiente.prioridad;
     prioridadSeleccionada = prioridad === 'completado' ? 'pendiente' : prioridad;
+
+    // Marcar visualmente la prioridad correcta
+    document.querySelectorAll('.prioridad').forEach(p => {
+        p.style.opacity = '0.6';
+        p.style.transform = 'scale(1)';
+    });
+
+    const prioridadDiv = document.querySelector(`.prioridad.${prioridadSeleccionada}`);
+    if (prioridadDiv) {
+        prioridadDiv.style.opacity = '1';
+        prioridadDiv.style.transform = 'scale(1.05)';
+}
 }
 
 // Guardar pendiente
@@ -263,6 +275,14 @@ function guardarNuevoPendiente() {
         // Editar pendiente existente
         pendientes[pendienteEditando].titulo = titulo;
         pendientes[pendienteEditando].descripcion = descripcion || 'Sin descripción';
+
+        // Guadar la nueva prioridad
+        pendientes[pendienteEditando].prioridad = prioridadSeleccionada;
+
+        // Eliminar prioridadAnterior si ya no esta completado
+        if (prioridadSeleccionada !== 'completado') {
+            delete pendientes[pendienteEditando].prioridadAnterior;
+        }
     } else {
         // Crear nuevo pendiente
         pendientes.push({
