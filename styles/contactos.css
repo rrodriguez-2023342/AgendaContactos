@@ -109,17 +109,9 @@ body {
     font-size: 1.1rem;
 }
 
-/* Controles */
-.controles-todo {
-    display: flex;
-    align-items: center;
-    gap: 15px;
-    margin-bottom: 30px;
-    flex-wrap: wrap;
-}
-
-/* Boton de Nuevo Pendiente */
+/* Boton nuevo contacto */
 .nuevo-contacto-btn {
+    display: inline-block;
     background: linear-gradient(135deg, #a855f7, #7c3aed);
     color: white;
     padding: 14px 28px;
@@ -131,48 +123,19 @@ body {
     transition: 0.3s ease;
 }
 
-.controles-todo .nuevo-contacto-btn {
-    margin-bottom: 0;
-}
-
 .nuevo-contacto-btn:hover {
     transform: translateY(-2px);
     box-shadow: 0 6px 20px rgba(168, 85, 247, 0.4);
 }
 
-/* Filtro */
-.filtro-select {
-    background: rgba(42, 42, 60, 0.6);
-    backdrop-filter: blur(10px);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    color: white;
-    padding: 14px 20px;
-    border-radius: 50px;
-    font-size: 1rem;
-    font-weight: 500;
-    cursor: pointer;
-    outline: none;
-    transition: 0.3s ease;
-}
-
-.filtro-select:hover {
-    background: rgba(52, 52, 70, 0.8);
-    transform: translateY(-2px);
-}
-
-.filtro-select option {
-    background: #1a1a2e;
-    color: white;
-}
-
-/* Lista*/
-.todo-lista {
+/* Lista de contactos */
+.contacto-lista {
     display: grid;
     grid-template-columns: 1fr;
     gap: 18px;
 }
 
-.todo {
+.contacto {
     background: rgba(42, 42, 60, 0.6);
     backdrop-filter: blur(10px);
     border-radius: 16px;
@@ -182,103 +145,113 @@ body {
     gap: 18px;
     transition: 0.3s ease;
     cursor: pointer;
-    border-left: 6px solid transparent;
 }
 
-.todo:hover {
+.contacto:hover {
     background: rgba(52, 52, 70, 0.8);
     transform: translateY(-3px);
 }
 
-.todo-check {
-    width: 22px;
-    height: 22px;
+/* Avatar */
+.contacto-avatar {
+    width: 65px;
+    height: 65px;
     border-radius: 50%;
-    border: 2px solid #a855f7;
+    background: white;
+    color: #3b3b55;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.6rem;
+    font-weight: bold;
     flex-shrink: 0;
 }
 
-.todo-info {
+/* Info */
+.contacto-info {
     flex: 1;
+    min-width: 0;
 }
 
-.todo-titulo {
-    font-size: 1.2rem;
+.contacto-nombre {
+    font-size: 1.25rem;
     font-weight: 600;
     color: white;
+    margin-bottom: 4px;
 }
 
-.todo-descripcion {
+.contacto-email,
+.contacto-tel {
     font-size: 0.95rem;
     color: rgba(255, 255, 255, 0.65);
+    word-break: break-word;
 }
 
-/* Acciones */
-.todo-acciones {
-    display: flex;
-    gap: 10px;
+/* Flecha */
+.contacto-flecha {
+    font-size: 1.5rem;
+    color: rgba(255, 255, 255, 0.4);
 }
 
-.todo-btn {
-    padding: 8px 16px;
-    border-radius: 50px;
-    font-size: 0.85rem;
-    border: none;
-    cursor: pointer;
-    color: white;
-    transition: 0.3s ease;
+/* Tablets */
+@media (max-width: 900px) {
+    .encabezado h1 {
+        font-size: 2rem;
+    }
+
+    .contacto-avatar {
+        width: 55px;
+        height: 55px;
+        font-size: 1.4rem;
+    }
 }
 
-.todo-btn.editar {
-    background: linear-gradient(135deg, #38bdf8, #0ea5e9);
-}
-
-.todo-btn.eliminar {
-    background: linear-gradient(135deg, #f87171, #ef4444);
-}
-
-.todo-btn:hover {
-    transform: translateY(-2px);
-}
-
-/* Estados */
-.todo.pendiente {
-    border-left-color: #facc15;
-}
-
-.todo.urgente {
-    border-left-color: #ef4444;
-}
-
-.todo.finalizada,
-.todo.completado {
-    border-left-color: #22c55e;
-    opacity: 0.7;
-}
-
-.todo.finalizada .todo-titulo,
-.todo.completado .todo-titulo {
-    text-decoration: line-through;
-}
-
-/* Responsive */
+/* Celulares */
 @media (max-width: 480px) {
-    .controles-todo {
+    body {
+        padding: 20px 10px;
+    }
+
+    .navbar {
         flex-direction: column;
-        width: 100%;
+        text-align: center;
     }
 
-    .nuevo-contacto-btn,
-    .filtro-select {
+    .navbar-botones {
         width: 100%;
+        justify-content: center;
     }
 
-    .todo {
+    .nav-btn {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .encabezado h1 {
+        font-size: 1.7rem;
+    }
+
+    .contacto {
         flex-wrap: wrap;
+        padding: 16px;
     }
 
-    .todo-acciones {
-        width: 100%;
-        justify-content: flex-end;
+    .contacto-flecha {
+        display: none;
+    }
+
+    .contacto-avatar {
+        width: 48px;
+        height: 48px;
+        font-size: 1.2rem;
+    }
+
+    .contacto-nombre {
+        font-size: 1rem;
+    }
+
+    .contacto-email,
+    .contacto-tel {
+        font-size: 0.85rem;
     }
 }
